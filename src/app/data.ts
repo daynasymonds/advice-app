@@ -15,7 +15,7 @@ function randomImangeNameIndex(): number {
   return Math.floor(Math.random() * images.length);
 }
 
-export function getInitialAdvice(): Advice {
+export async function getInitialAdvice(): Promise<Advice> {
     return {text: "Always seek out advice or opinions when making a decision.", imageName: "rainbow.svg", alt: "Rainbow"} as Advice;
 }
 

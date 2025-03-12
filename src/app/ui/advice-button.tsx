@@ -31,7 +31,7 @@ export default function AdviceButton({ initial }: { initial: Advice }) {
         className="rounded-full bg-primary text-white py-1.5 w-[200px] place-self-center font-light duration-[.25s] transition ease-in hover:bg-white hover:border-primary hover:border-solid hover:border-[1px] hover:text-primary"
         onClick={onClick}
       >
-        Get another quote
+        Get more advice
       </button>
     </>
   );

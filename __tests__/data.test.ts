@@ -3,14 +3,14 @@ import { getInitialAdvice, getAdviceData } from "@/app/data";
 
 describe("data", () => {
   describe("initial advice state", () => {
-    it("is static", () => {
+    it("is static", async () => {
       const expected = {
         text: "Always seek out advice or opinions when making a decision.",
         imageName: "rainbow.svg",
         alt: "Rainbow",
       } as Advice;
 
-      const actual = getInitialAdvice();
+      const actual = await getInitialAdvice();
 
       expect(actual.text).toBe(expected.text);
       expect(actual.imageName).toBe(expected.imageName);
