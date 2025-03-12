@@ -2,26 +2,28 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import AdviceButton from "@/app/ui/advice-button";
-import { Advice, Slip } from "@/app/models";
+import { Advice } from "@/app/models";
+import { getAdviceData } from "@/app/data";
+
+const initialState = {
+  text: "a piece of advice",
+  imageName: "image.svg",
+  alt: "some alt text",
+} as Advice;
+
+const newState = {
+  text: "a second piece of advice",
+  imageName: "image.svg",
+  alt: "some alt text",
+} as Advice;
+
+jest.mock("@/app/data", () => ({
+  getAdviceData: jest.fn(() => Promise.resolve(newState)),
+}));
 
 describe("AdviceButton", () => {
   it("changes advice text after click", async () => {
-    const initialState = {
-      text: "a piece of advice",
-      imageName: "image.svg",
-      alt: "some alt text",
-    } as Advice;
-
-    const newAdvice = {
-      slip_id: 1,
-      advice: "a second piece of advice",
-    } as Slip;
-
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve({ slip: newAdvice }),
-      })
-    ) as jest.Mock;
+    expect(jest.isMockFunction(getAdviceData)).toBeTruthy();
 
     const user = userEvent.setup();
 
@@ -31,6 +33,6 @@ describe("AdviceButton", () => {
 
     await user.click(screen.getByRole("button"));
 
-    expect(screen.getByText(newAdvice.advice)).toBeInTheDocument();
+    expect(screen.getByText(newState.text)).toBeInTheDocument();
   });
 });
