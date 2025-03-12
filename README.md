@@ -8,12 +8,20 @@ Features:
 * NextJS/React
 * TailwindCSS
 * Responsive design
+* Test frameworks: Jest unit tests and snapshot tests, react-testing-library
 
 Images and favicon provided by [favicon.io](https://favicon.io/).
 
 # Local development
 
+To run:
+
 ```
 $ npm run dev
+```
+
+Tests:
+```
+$ npm test
 ```
 

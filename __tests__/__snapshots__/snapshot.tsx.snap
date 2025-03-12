@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders advice button unchanged 1`] = `
+<div>
+  <p
+    class="text-center font-light text-[24px] md:max-w-md] md:text-[36px]"
+  >
+    a piece of advice
+  </p>
+  <img
+    alt="A rainbow"
+    class="h-[128px] w-[128px] self-center md:h-[200px] md:w-[200px]"
+    data-nimg="1"
+    decoding="async"
+    height="128"
+    loading="lazy"
+    src="rainbow.svg"
+    style="color: transparent;"
+    width="128"
+  />
+  <button
+    class="rounded-full bg-primary text-white py-1.5 w-[200px] place-self-center font-light duration-[.25s] transition ease-in hover:bg-white hover:border-primary hover:border-solid hover:border-[1px] hover:text-primary"
+  >
+    Get another quote
+  </button>
+</div>
+`;

@@ -1,3 +1,5 @@
+"use server";
+
 import { Advice, Slip, ImageData } from "./models";
 
 const images: ImageData[] = [
@@ -13,7 +15,7 @@ function randomImangeNameIndex(): number {
   return Math.floor(Math.random() * images.length);
 }
 
-export async function getInitialAdvice(): Promise<Advice> {
+export function getInitialAdvice(): Advice {
     return {text: "Always seek out advice or opinions when making a decision.", imageName: "rainbow.svg", alt: "Rainbow"} as Advice;
 }
 
